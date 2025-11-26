@@ -1,6 +1,8 @@
+import { ClientLayout } from '@/app/ClientLayout';
+import Footer from '@/components/Footer';
+import type { Metadata } from 'next';
 
-
-export const metadata = {
+export const metadata: Metadata = {
   icons: {
     icon: '/images/logo-black-main.ico',
   },
@@ -13,5 +15,10 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return (
+    <div className="flex pt-2 flex-col min-h-screen bg-white dark:bg-gray-900">
+      <ClientLayout>{children}</ClientLayout>
+      <Footer />
+    </div>
+  );
 }

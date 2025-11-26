@@ -1,0 +1,248 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Digital Menu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        /* Custom hide scrollbar */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<link id="all-fonts-link-font-geist" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist">.font-geist { font-family: 'Geist', sans-serif !important; }</style><link id="all-fonts-link-font-roboto" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-roboto">.font-roboto { font-family: 'Roboto', sans-serif !important; }</style><link id="all-fonts-link-font-montserrat" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-montserrat">.font-montserrat { font-family: 'Montserrat', sans-serif !important; }</style><link id="all-fonts-link-font-poppins" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-poppins">.font-poppins { font-family: 'Poppins', sans-serif !important; }</style><link id="all-fonts-link-font-playfair" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&amp;display=swap"><style id="all-fonts-style-font-playfair">.font-playfair { font-family: 'Playfair Display', serif !important; }</style><link id="all-fonts-link-font-instrument-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-instrument-serif">.font-instrument-serif { font-family: 'Instrument Serif', serif !important; }</style><link id="all-fonts-link-font-merriweather" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&amp;display=swap"><style id="all-fonts-style-font-merriweather">.font-merriweather { font-family: 'Merriweather', serif !important; }</style><link id="all-fonts-link-font-bricolage" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-bricolage">.font-bricolage { font-family: 'Bricolage Grotesque', sans-serif !important; }</style><link id="all-fonts-link-font-jakarta" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-jakarta">.font-jakarta { font-family: 'Plus Jakarta Sans', sans-serif !important; }</style><link id="all-fonts-link-font-manrope" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-manrope">.font-manrope { font-family: 'Manrope', sans-serif !important; }</style><link id="all-fonts-link-font-space-grotesk" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-space-grotesk">.font-space-grotesk { font-family: 'Space Grotesk', sans-serif !important; }</style><link id="all-fonts-link-font-work-sans" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-work-sans">.font-work-sans { font-family: 'Work Sans', sans-serif !important; }</style><link id="all-fonts-link-font-pt-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&amp;display=swap"><style id="all-fonts-style-font-pt-serif">.font-pt-serif { font-family: 'PT Serif', serif !important; }</style><link id="all-fonts-link-font-geist-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist-mono">.font-geist-mono { font-family: 'Geist Mono', monospace !important; }</style><link id="all-fonts-link-font-space-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap"><style id="all-fonts-style-font-space-mono">.font-space-mono { font-family: 'Space Mono', monospace !important; }</style><link id="all-fonts-link-font-quicksand" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-quicksand">.font-quicksand { font-family: 'Quicksand', sans-serif !important; }</style><link id="all-fonts-link-font-nunito" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-nunito">.font-nunito { font-family: 'Nunito', sans-serif !important; }</style></head>
+<body class="bg-gray-50 text-gray-900 selection:bg-gray-900 selection:text-white pb-10">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 flex items-center justify-between px-6 py-4 pointer-events-none">
+        <!-- Logo -->
+        <div class="pointer-events-auto bg-white/80 backdrop-blur-md border border-white/20 shadow-sm rounded-full px-4 py-2">
+            <span class="font-semibold text-sm tracking-tight text-gray-900 uppercase">OMNI</span>
+        </div>
+        <!-- Info / Actions -->
+        <div class="flex items-center gap-3 pointer-events-auto">
+            <button class="bg-white/80 backdrop-blur-md border border-white/20 shadow-sm rounded-full p-2.5 text-gray-700 hover:text-black transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="info" class="lucide lucide-info w-5 h-5"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Carousel -->
+    <header class="relative bg-white rounded-b-[2.5rem] overflow-hidden shadow-sm z-0">
+        <div class="flex overflow-x-auto snap-x snap-mandatory no-scrollbar h-[55vh] w-full">
+            <!-- Slide 1 -->
+            <div class="flex-shrink-0 w-full h-full snap-center relative">
+                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&amp;w=1000&amp;auto=format&amp;fit=crop" alt="Salad Bowl" class="w-full h-full object-cover">
+                <div class="bg-gradient-to-t from-black/60 via-transparent to-black/10 absolute top-0 right-0 bottom-0 left-0"></div>
+                <div class="w-full pt-8 pr-8 pb-12 pl-8 absolute bottom-0 left-0">
+                    <span class="inline-block px-3 py-1 bg-white/20 backdrop-blur-md border border-white/10 rounded-full text-xs font-medium text-white mb-3">New Arrival</span>
+                    <h1 class="text-3xl font-semibold text-white tracking-tight leading-tight mb-2">Fresh HarvestSuper Bowl</h1>
+                    <p class="text-gray-200 text-sm font-normal line-clamp-2 max-w-[80%]">Quinoa, avocado, roasted sweet potato, and tahini dressing.</p>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="flex-shrink-0 w-full h-full snap-center relative">
+                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&amp;w=1000&amp;auto=format&amp;fit=crop" alt="Pizza" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/10"></div>
+                <div class="absolute bottom-0 left-0 w-full p-8 pb-12">
+                    <span class="inline-block px-3 py-1 bg-white/20 backdrop-blur-md border border-white/10 rounded-full text-xs font-medium text-white mb-3">Best Seller</span>
+                    <h1 class="text-3xl font-semibold text-white tracking-tight leading-tight mb-2">Artisan TruffleFlatbread</h1>
+                    <p class="text-gray-200 text-sm font-normal line-clamp-2 max-w-[80%]">Wild mushrooms, truffle oil, mozzarella, and thyme.</p>
+                </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="flex-shrink-0 w-full h-full snap-center relative">
+                <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?q=80&amp;w=1000&amp;auto=format&amp;fit=crop" alt="Toast" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/10"></div>
+                <div class="absolute bottom-0 left-0 w-full p-8 pb-12">
+                    <span class="inline-block px-3 py-1 bg-white/20 backdrop-blur-md border border-white/10 rounded-full text-xs font-medium text-white mb-3">Breakfast</span>
+                    <h1 class="text-3xl font-semibold text-white tracking-tight leading-tight mb-2">Avocado &amp; PoachedEgg Toast</h1>
+                    <p class="text-gray-200 text-sm font-normal line-clamp-2 max-w-[80%]">Sourdough, chili flakes, microgreens, and olive oil.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pagination Dots -->
+        <div class="flex gap-1.5 z-10 w-full absolute bottom-4 left-0 gap-x-1.5 gap-y-1.5 justify-center">
+            <div class="w-1.5 h-1.5 rounded-full bg-white"></div>
+            <div class="w-1.5 h-1.5 rounded-full bg-white/40"></div>
+            <div class="w-1.5 h-1.5 rounded-full bg-white/40"></div>
+        </div>
+    </header>
+
+    <!-- Sticky Navigation & Filter -->
+    <div class="sticky top-0 z-40 bg-gray-50/95 backdrop-blur-xl border-b border-gray-200/50 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.02)]">
+        <div class="pt-4 px-4 pb-2">
+            <!-- Search Bar -->
+            <div class="relative group">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="search" class="lucide lucide-search w-4 h-4 text-gray-400 group-focus-within:text-gray-800 transition-colors"><path d="m21 21-4.34-4.34"></path><circle cx="11" cy="11" r="8"></circle></svg>
+                </div>
+                <input type="text" class="block w-full pl-10 pr-3 py-3 border-none rounded-2xl bg-white shadow-[0_2px_8px_rgba(0,0,0,0.04)] text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900/10 focus:shadow-md text-sm transition-all" placeholder="Search dishes, ingredients...">
+                <div class="absolute inset-y-0 right-0 pr-3 flex items-center">
+                    <button class="p-1.5 rounded-lg bg-gray-50 text-gray-400 hover:text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="sliders-horizontal" class="lucide lucide-sliders-horizontal w-4 h-4"><path d="M10 5H3"></path><path d="M12 19H3"></path><path d="M14 3v4"></path><path d="M16 17v4"></path><path d="M21 12h-9"></path><path d="M21 19h-5"></path><path d="M21 5h-7"></path><path d="M8 10v4"></path><path d="M8 12H3"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filter Chips -->
+        <div class="flex overflow-x-auto no-scrollbar space-x-2 px-4 pb-4 pt-2">
+            <button class="flex-shrink-0 px-4 py-1.5 bg-gray-900 text-white rounded-full text-xs font-medium shadow-md transition-transform active:scale-95">All</button>
+            <button class="flex-shrink-0 px-4 py-1.5 bg-white text-gray-600 border border-gray-200 rounded-full text-xs font-medium hover:bg-gray-50 transition-colors">Salads</button>
+            <button class="flex-shrink-0 px-4 py-1.5 bg-white text-gray-600 border border-gray-200 rounded-full text-xs font-medium hover:bg-gray-50 transition-colors">Burgers</button>
+            <button class="flex-shrink-0 px-4 py-1.5 bg-white text-gray-600 border border-gray-200 rounded-full text-xs font-medium hover:bg-gray-50 transition-colors">Bowls</button>
+            <button class="flex-shrink-0 px-4 py-1.5 bg-white text-gray-600 border border-gray-200 rounded-full text-xs font-medium hover:bg-gray-50 transition-colors">Dessert</button>
+            <button class="flex-shrink-0 px-4 py-1.5 bg-white text-gray-600 border border-gray-200 rounded-full text-xs font-medium hover:bg-gray-50 transition-colors">Drinks</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="px-4 py-6">
+        
+        <!-- Section Header -->
+        <div class="flex items-center justify-between mb-4 px-1">
+            <h2 class="text-lg font-semibold tracking-tight text-gray-900">Popular Now</h2>
+            <a href="#" class="text-xs font-medium text-gray-500 hover:text-gray-900 flex items-center gap-0.5">
+                See all <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-right" class="lucide lucide-chevron-right w-3 h-3"><path d="m9 18 6-6-6-6"></path></svg>
+            </a>
+        </div>
+
+        <!-- Menu Grid -->
+        <div class="grid grid-cols-2 gap-4 pb-8">
+            
+            <!-- Item 1 -->
+            <div class="group bg-white rounded-2xl p-2.5 shadow-[0_2px_12px_-4px_rgba(0,0,0,0.06)] hover:shadow-lg transition-all duration-300 border border-gray-100 flex flex-col h-full cursor-pointer">
+                <div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden mb-3 bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&amp;w=500&amp;auto=format&amp;fit=crop" alt="Burger" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute top-2 right-2 bg-white/90 backdrop-blur-sm rounded-full p-1.5 shadow-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="heart" class="lucide lucide-heart w-3.5 h-3.5 text-gray-400 hover:fill-red-500 hover:text-red-500 transition-colors"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"></path></svg>
+                    </div>
+                </div>
+                <div class="px-1 flex-1 flex flex-col">
+                    <div class="flex items-center gap-1 mb-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" class="lucide lucide-star w-3 h-3 fill-yellow-400 text-yellow-400"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                        <span class="text-[10px] font-medium text-gray-500">4.8 (120+)</span>
+                    </div>
+                    <h3 class="font-semibold text-sm leading-tight text-gray-900 mb-1">Classic Wagyu Burger</h3>
+                    <p class="text-xs text-gray-500 leading-snug line-clamp-2 mb-3">Aged cheddar, caramelized onions, brioche.</p>
+                    
+                    <div class="mt-auto flex items-center justify-between">
+                        <span class="text-sm font-semibold text-gray-900">$18.50</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="group bg-white rounded-2xl p-2.5 shadow-[0_2px_12px_-4px_rgba(0,0,0,0.06)] hover:shadow-lg transition-all duration-300 border border-gray-100 flex flex-col h-full cursor-pointer">
+                <div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden mb-3 bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&amp;w=500&amp;auto=format&amp;fit=crop" alt="Salad" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="px-1 flex-1 flex flex-col">
+                    <div class="flex items-center gap-1 mb-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="leaf" class="lucide lucide-leaf w-3 h-3 text-green-600"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>
+                        <span class="text-[10px] font-medium text-gray-500">Vegan</span>
+                    </div>
+                    <h3 class="font-semibold text-sm leading-tight text-gray-900 mb-1">Green Goddess Bowl</h3>
+                    <p class="text-xs text-gray-500 leading-snug line-clamp-2 mb-3">Kale, edamame, cucumber, green tahini.</p>
+                    
+                    <div class="mt-auto flex items-center justify-between">
+                        <span class="text-sm font-semibold text-gray-900">$14.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="group bg-white rounded-2xl p-2.5 shadow-[0_2px_12px_-4px_rgba(0,0,0,0.06)] hover:shadow-lg transition-all duration-300 border border-gray-100 flex flex-col h-full cursor-pointer">
+                <div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden mb-3 bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?q=80&amp;w=500&amp;auto=format&amp;fit=crop" alt="Pasta" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="px-1 flex-1 flex flex-col">
+                    <div class="flex items-center gap-1 mb-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="flame" class="lucide lucide-flame w-3 h-3 fill-orange-500 text-orange-500"><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"></path></svg>
+                        <span class="text-[10px] font-medium text-gray-500">Spicy</span>
+                    </div>
+                    <h3 class="font-semibold text-sm leading-tight text-gray-900 mb-1">Spicy Vodka Rigatoni</h3>
+                    <p class="text-xs text-gray-500 leading-snug line-clamp-2 mb-3">Calabrian chili, parmesan, fresh basil.</p>
+                    
+                    <div class="mt-auto flex items-center justify-between">
+                        <span class="text-sm font-semibold text-gray-900">$16.50</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="group bg-white rounded-2xl p-2.5 shadow-[0_2px_12px_-4px_rgba(0,0,0,0.06)] hover:shadow-lg transition-all duration-300 border border-gray-100 flex flex-col h-full cursor-pointer">
+                <div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden mb-3 bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&amp;w=500&amp;auto=format&amp;fit=crop" alt="Drink" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="px-1 flex-1 flex flex-col">
+                    <div class="flex items-center gap-1 mb-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" class="lucide lucide-star w-3 h-3 fill-yellow-400 text-yellow-400"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                        <span class="text-[10px] font-medium text-gray-500">4.9</span>
+                    </div>
+                    <h3 class="font-semibold text-sm leading-tight text-gray-900 mb-1">Iced Matcha Latte</h3>
+                    <p class="text-xs text-gray-500 leading-snug line-clamp-2 mb-3">Ceremonial grade matcha, oat milk.</p>
+                    
+                    <div class="mt-auto flex items-center justify-between">
+                        <span class="text-sm font-semibold text-gray-900">$6.50</span>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Item 5 -->
+             <div class="group bg-white rounded-2xl p-2.5 shadow-[0_2px_12px_-4px_rgba(0,0,0,0.06)] hover:shadow-lg transition-all duration-300 border border-gray-100 flex flex-col h-full cursor-pointer">
+                <div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden mb-3 bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?q=80&amp;w=500&amp;auto=format&amp;fit=crop" alt="Dessert" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="px-1 flex-1 flex flex-col">
+                    <div class="flex items-center gap-1 mb-1">
+                        <span class="text-[10px] font-medium text-gray-500">Sweet</span>
+                    </div>
+                    <h3 class="font-semibold text-sm leading-tight text-gray-900 mb-1">Berry Cheesecake</h3>
+                    <p class="text-xs text-gray-500 leading-snug line-clamp-2 mb-3">Seasonal berries, graham crust.</p>
+                    
+                    <div class="mt-auto flex items-center justify-between">
+                        <span class="text-sm font-semibold text-gray-900">$9.00</span>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Item 6 -->
+             <div class="group bg-white rounded-2xl p-2.5 shadow-[0_2px_12px_-4px_rgba(0,0,0,0.06)] hover:shadow-lg transition-all duration-300 border border-gray-100 flex flex-col h-full cursor-pointer">
+                <div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden mb-3 bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?q=80&amp;w=500&amp;auto=format&amp;fit=crop" alt="Steak" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="px-1 flex-1 flex flex-col">
+                    <div class="flex items-center gap-1 mb-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="clock" class="lucide lucide-clock w-3 h-3 text-gray-400"><path d="M12 6v6l4 2"></path><circle cx="12" cy="12" r="10"></circle></svg>
+                        <span class="text-[10px] font-medium text-gray-500">25m</span>
+                    </div>
+                    <h3 class="font-semibold text-sm leading-tight text-gray-900 mb-1">Filet Mignon</h3>
+                    <p class="text-xs text-gray-500 leading-snug line-clamp-2 mb-3">Garlic butter, rosemary potatoes.</p>
+                    
+                    <div class="mt-auto flex items-center justify-between">
+                        <span class="text-sm font-semibold text-gray-900">$32.00</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+
+</body></html>
