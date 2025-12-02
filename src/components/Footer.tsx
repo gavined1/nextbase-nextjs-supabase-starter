@@ -1,9 +1,6 @@
 'use client';
 
-import { Button } from '@/components/ui/button';
-import { Separator } from '@/components/ui/separator';
-import { T } from '@/components/ui/Typography';
-import { Github, Instagram, Linkedin, Twitter, Utensils } from 'lucide-react';
+import { Facebook, Instagram, Send } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
@@ -13,210 +10,147 @@ const Footer = () => {
   useEffect(() => {
     setYear(new Date().getFullYear());
   }, []);
+
   return (
-    <footer className="border-t border-stone-200 bg-stone-50 py-12 sm:py-16">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 pb-12">
-          {/* Brand Column */}
-          <div className="space-y-4 lg:col-span-1">
-            <Link href="/" className="inline-flex items-center gap-2">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 shadow-lg shadow-amber-500/25">
-                <Utensils className="h-5 w-5 text-white" />
-              </div>
-              <span className="text-xl font-bold tracking-tight text-stone-900">
-                MenuCraft
-              </span>
+    <footer className="bg-white border-t border-slate-100 pt-16 pb-12">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-16">
+          <div className="col-span-2 md:col-span-1">
+            <Link
+              href="/"
+              className="text-lg font-semibold tracking-tighter text-slate-950 block mb-4"
+            >
+              ANGKOR MENU.
             </Link>
-
-            <T.P className="text-sm text-stone-500 leading-relaxed">
-              Beautiful digital menus for modern restaurants. Create, customize,
-              and share your menu with the world.
-            </T.P>
-
-            <div className="flex items-center gap-2">
-              <Button
-                variant="ghost"
-                size="icon"
-                asChild
-                className="h-9 w-9 text-stone-500 hover:text-amber-600 hover:bg-amber-50"
-              >
-                <Link
-                  href="https://twitter.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Twitter"
-                >
-                  <Twitter className="h-4 w-4" />
-                </Link>
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                asChild
-                className="h-9 w-9 text-stone-500 hover:text-amber-600 hover:bg-amber-50"
-              >
-                <Link
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Instagram"
-                >
-                  <Instagram className="h-4 w-4" />
-                </Link>
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                asChild
-                className="h-9 w-9 text-stone-500 hover:text-amber-600 hover:bg-amber-50"
-              >
-                <Link
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin className="h-4 w-4" />
-                </Link>
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                asChild
-                className="h-9 w-9 text-stone-500 hover:text-amber-600 hover:bg-amber-50"
-              >
-                <Link
-                  href="https://github.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="GitHub"
-                >
-                  <Github className="h-4 w-4" />
-                </Link>
-              </Button>
-            </div>
+            <p className="text-sm text-slate-500 leading-relaxed">
+              Modern digital catalog platform designed for businesses in
+              Cambodia and beyond.
+            </p>
           </div>
 
-          {/* Product Column */}
-          <div className="space-y-4">
-            <T.H4 className="text-sm font-semibold uppercase tracking-wider text-stone-900">
+          <div>
+            <h4 className="text-xs font-semibold text-slate-900 uppercase tracking-wider mb-4">
               Product
-            </T.H4>
-            <nav className="flex flex-col space-y-3">
-              <Link
-                href="/menu/omni"
-                className="text-sm text-stone-500 hover:text-amber-600 transition-colors"
-              >
-                Live Demo
-              </Link>
-              <Link
-                href="/login"
-                className="text-sm text-stone-500 hover:text-amber-600 transition-colors"
-              >
-                Get Started
-              </Link>
-              <Link
-                href="#"
-                className="text-sm text-stone-500 hover:text-amber-600 transition-colors"
-              >
-                Pricing
-              </Link>
-              <Link
-                href="#"
-                className="text-sm text-stone-500 hover:text-amber-600 transition-colors"
-              >
-                Features
-              </Link>
-            </nav>
+            </h4>
+            <ul className="space-y-3">
+              <li>
+                <Link
+                  href="/#features"
+                  className="text-sm text-slate-500 hover:text-slate-900 transition-colors"
+                >
+                  Features
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/#use-cases"
+                  className="text-sm text-slate-500 hover:text-slate-900 transition-colors"
+                >
+                  Use Cases
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/menu/omni"
+                  className="text-sm text-slate-500 hover:text-slate-900 transition-colors"
+                >
+                  Demo
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="text-sm text-slate-500 hover:text-slate-900 transition-colors"
+                >
+                  Pricing
+                </Link>
+              </li>
+            </ul>
           </div>
 
-          {/* Resources Column */}
-          <div className="space-y-4">
-            <T.H4 className="text-sm font-semibold uppercase tracking-wider text-stone-900">
-              Resources
-            </T.H4>
-            <nav className="flex flex-col space-y-3">
-              <Link
-                href="#"
-                className="text-sm text-stone-500 hover:text-amber-600 transition-colors"
-              >
-                Documentation
-              </Link>
-              <Link
-                href="#"
-                className="text-sm text-stone-500 hover:text-amber-600 transition-colors"
-              >
-                Help Center
-              </Link>
-              <Link
-                href="#"
-                className="text-sm text-stone-500 hover:text-amber-600 transition-colors"
-              >
-                Blog
-              </Link>
-              <Link
-                href="#"
-                className="text-sm text-stone-500 hover:text-amber-600 transition-colors"
-              >
-                Contact
-              </Link>
-            </nav>
+          <div>
+            <h4 className="text-xs font-semibold text-slate-900 uppercase tracking-wider mb-4">
+              Company
+            </h4>
+            <ul className="space-y-3">
+              <li>
+                <Link
+                  href="#"
+                  className="text-sm text-slate-500 hover:text-slate-900 transition-colors"
+                >
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="mailto:support@angkormenu.com"
+                  className="text-sm text-slate-500 hover:text-slate-900 transition-colors"
+                >
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="text-sm text-slate-500 hover:text-slate-900 transition-colors"
+                >
+                  Blog
+                </Link>
+              </li>
+            </ul>
           </div>
 
-          {/* Legal Column */}
-          <div className="space-y-4">
-            <T.H4 className="text-sm font-semibold uppercase tracking-wider text-stone-900">
+          <div>
+            <h4 className="text-xs font-semibold text-slate-900 uppercase tracking-wider mb-4">
               Legal
-            </T.H4>
-            <nav className="flex flex-col space-y-3">
-              <Link
-                href="#"
-                className="text-sm text-stone-500 hover:text-amber-600 transition-colors"
-              >
-                Privacy Policy
-              </Link>
-              <Link
-                href="#"
-                className="text-sm text-stone-500 hover:text-amber-600 transition-colors"
-              >
-                Terms of Service
-              </Link>
-              <Link
-                href="#"
-                className="text-sm text-stone-500 hover:text-amber-600 transition-colors"
-              >
-                Cookie Policy
-              </Link>
-            </nav>
+            </h4>
+            <ul className="space-y-3">
+              <li>
+                <Link
+                  href="#"
+                  className="text-sm text-slate-500 hover:text-slate-900 transition-colors"
+                >
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="text-sm text-slate-500 hover:text-slate-900 transition-colors"
+                >
+                  Terms of Service
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
 
-        <Separator className="bg-stone-200" />
-
-        <div className="flex flex-col gap-4 pt-8 sm:flex-row sm:items-center sm:justify-between">
-          <T.Small className="text-stone-500">
-            © {year} MenuCraft. All rights reserved.
-          </T.Small>
-
-          <div className="flex items-center gap-6">
+        <div className="flex flex-col md:flex-row justify-between items-center border-t border-slate-100 pt-8">
+          <p className="text-xs text-slate-400">
+            © {year} Angkor Menu. All rights reserved.
+          </p>
+          <div className="flex gap-6 mt-4 md:mt-0">
             <Link
               href="#"
-              className="text-xs text-stone-500 hover:text-amber-600 transition-colors"
+              className="text-slate-400 hover:text-slate-600 transition-colors"
+              aria-label="Facebook"
             >
-              Privacy
-              </Link>
+              <Facebook className="w-4 h-4" />
+            </Link>
             <Link
               href="#"
-              className="text-xs text-stone-500 hover:text-amber-600 transition-colors"
+              className="text-slate-400 hover:text-slate-600 transition-colors"
+              aria-label="Telegram"
             >
-              Terms
-              </Link>
+              <Send className="w-4 h-4" />
+            </Link>
             <Link
               href="#"
-              className="text-xs text-stone-500 hover:text-amber-600 transition-colors"
+              className="text-slate-400 hover:text-slate-600 transition-colors"
+              aria-label="Instagram"
             >
-              Cookies
-              </Link>
+              <Instagram className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </div>

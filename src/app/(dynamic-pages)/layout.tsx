@@ -4,11 +4,11 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   icons: {
-    icon: '/images/logo-black-main.ico',
+    icon: '/logos/angkor-menu-favicon.png',
   },
-  title: 'MenuCraft - Digital Menus for Modern Restaurants',
+  title: 'Angkor Menu - Digital Catalogs for Any Business',
   description:
-    'Create beautiful digital menus for your restaurant. QR code ready, mobile-first, and easy to customize.',
+    'Create beautiful digital menus and catalogs for your business. QR code ready, mobile-first, and easy to customize.',
 };
 
 export default async function RootLayout({

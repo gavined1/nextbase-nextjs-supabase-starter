@@ -1,219 +1,213 @@
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
-import { T } from '@/components/ui/Typography';
 import {
   ArrowRight,
   Bus,
-  ChefHat,
-  Filter,
-  Flame,
-  Globe,
+  Coins,
   Hotel,
-  Leaf,
-  Palette,
-  QrCode,
+  Image as ImageIcon,
+  Languages,
+  ScanLine,
   Search,
+  Share2,
+  ShieldCheck,
   ShoppingBag,
   Smartphone,
-  Sparkles,
-  Star,
-  Ticket,
   Utensils,
-  Wrench,
-  Zap,
 } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-stone-50">
-      {/* Navbar */}
-      <nav className="fixed top-0 left-0 right-0 z-50 border-b border-stone-200/50 bg-white/80 backdrop-blur-xl">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="flex h-16 items-center justify-between">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 shadow-lg shadow-amber-500/25">
-                <Utensils className="h-5 w-5 text-white" />
-              </div>
-              <span className="text-xl font-bold tracking-tight text-stone-900">
-                MenuCraft
-              </span>
+    <div className="bg-white text-slate-900 antialiased selection:bg-orange-100 selection:text-orange-900">
+      {/* Navigation */}
+      <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            {/* Brand Logo */}
+            <Image
+              src="/logos/angkor-menu-favicon.png"
+              alt="Angkor Menu"
+              width={28}
+              height={28}
+              className="rounded"
+            />
+            <Link
+              href="/"
+              className="text-lg font-semibold tracking-tighter text-slate-950"
+            >
+              ANGKOR MENU.
             </Link>
-            <div className="flex items-center gap-3">
-              <Button variant="ghost" asChild className="hidden sm:inline-flex">
-                <Link href="/menu/omni">View Demo</Link>
-              </Button>
-              <Button
-                asChild
-                className="bg-gradient-to-r from-amber-500 to-orange-600 text-white shadow-lg shadow-amber-500/25 hover:from-amber-600 hover:to-orange-700"
-              >
-                <Link href="/login">Get Started</Link>
-              </Button>
-            </div>
+          </div>
+
+          <div className="hidden md:flex items-center gap-8">
+            <a
+              href="#features"
+              className="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors"
+            >
+              Features
+            </a>
+            <a
+              href="#use-cases"
+              className="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors"
+            >
+              Use Cases
+            </a>
+            <a
+              href="#demo"
+              className="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors"
+            >
+              Demo
+            </a>
+          </div>
+
+          <div className="flex items-center gap-4">
+            <Link
+              href="/login"
+              className="hidden md:block text-sm font-medium text-slate-600 hover:text-slate-900"
+            >
+              Log in
+            </Link>
+            <Link
+              href="/login"
+              className="text-sm font-medium bg-slate-900 text-white px-4 py-2 rounded-full hover:bg-slate-800 transition-all shadow-sm ring-1 ring-slate-900/5"
+            >
+              Start Free
+            </Link>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden pt-24 pb-16 md:pt-32 md:pb-24">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-amber-100 via-stone-50 to-orange-50" />
-          <div
-            className="absolute inset-0 opacity-30"
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d97706' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-            }}
-          />
-        </div>
-
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="mx-auto max-w-4xl text-center">
-            <Badge
-              variant="outline"
-              className="mb-6 border-amber-300 bg-amber-50 px-4 py-1.5 text-amber-700"
-            >
-              <Sparkles className="mr-1.5 h-3.5 w-3.5" />
-              Multi-Purpose Digital Catalog Platform
-            </Badge>
-
-            <T.H1 className="mb-6 text-4xl font-extrabold leading-[1.1] tracking-tight text-stone-900 sm:text-5xl md:text-6xl lg:text-7xl">
-              Beautiful{' '}
-              <span className="bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 bg-clip-text text-transparent">
-                Digital Catalogs
-              </span>{' '}
-              for Any Business
-            </T.H1>
-
-            <T.P className="mx-auto mb-8 max-w-2xl text-lg text-stone-600 md:text-xl">
-              Create stunning digital menus, product catalogs, service lists, or ticket boards.
-              Perfect for restaurants, transportation, retail, hotels, and more. QR code ready.
-            </T.P>
-
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              <Button
-                size="lg"
-                asChild
-                className="group h-12 bg-gradient-to-r from-amber-500 to-orange-600 px-6 text-base font-semibold text-white shadow-xl shadow-amber-500/30 transition-all hover:from-amber-600 hover:to-orange-700 hover:shadow-2xl hover:shadow-amber-500/40"
-              >
-                <Link href="/menu/omni">
-                  View Live Demo
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                asChild
-                className="h-12 border-stone-300 px-6 text-base font-semibold text-stone-700 hover:bg-stone-100"
-              >
-                <Link href="/login">
-                  <QrCode className="mr-2 h-4 w-4" />
-                  Create Your Menu
-                </Link>
-              </Button>
-            </div>
+      <section className="pt-32 pb-20 md:pt-48 md:pb-32 px-6 overflow-hidden">
+        <div className="max-w-4xl mx-auto text-center animate-fade-in">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-100 mb-8">
+            <span className="text-base">🇰🇭</span>
+            <span className="text-xs font-medium text-orange-800 uppercase tracking-wide">
+              Made in Cambodia
+            </span>
           </div>
 
-          {/* Hero Device Mockup */}
-          <div className="relative mx-auto mt-16 max-w-5xl">
-            <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 opacity-20 blur-3xl" />
+          <h1 className="text-5xl md:text-7xl font-semibold tracking-tighter text-slate-900 mb-6 leading-[1.1]">
+            Showcase your products{' '}
+            <br className="hidden md:block" /> beautifully.
+          </h1>
 
-            {/* Phone Mockup */}
-            <div className="relative mx-auto w-full max-w-xs sm:max-w-sm">
-              <div className="relative overflow-hidden rounded-[2.5rem] border-8 border-stone-900 bg-stone-900 shadow-2xl">
-                {/* Phone Notch */}
-                <div className="absolute left-1/2 top-0 z-20 h-6 w-32 -translate-x-1/2 rounded-b-2xl bg-stone-900" />
+          <p className="text-lg text-slate-500 mb-10 max-w-xl mx-auto font-normal leading-relaxed">
+            The mobile-first digital catalog for restaurants, retail, and
+            hotels. Instant updates, dual currency support, and zero printing
+            costs.
+          </p>
 
-                {/* Screen Content */}
-                <div className="relative aspect-[9/19] w-full overflow-hidden bg-white">
-                  <Image
-                    src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=800&auto=format&fit=crop"
-                    alt="Digital menu preview"
-                    fill
-                    className="object-cover"
-                    priority
-                  />
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4">
+            <Link
+              href="/login"
+              className="w-full md:w-auto px-8 py-3 bg-slate-900 text-white text-sm font-medium rounded-full hover:bg-slate-800 transition-all shadow-lg shadow-slate-900/10 flex items-center justify-center gap-2"
+            >
+              Create Catalog <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link
+              href="/menu/omni"
+              className="w-full md:w-auto px-8 py-3 bg-white text-slate-600 border border-slate-200 text-sm font-medium rounded-full hover:bg-slate-50 transition-all flex items-center justify-center gap-2"
+            >
+              <ScanLine className="w-4 h-4" /> View Demo
+            </Link>
+          </div>
+        </div>
+      </section>
 
-                  {/* Overlay UI Elements */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20">
-                    {/* Navbar Mockup */}
-                    <div className="absolute left-0 right-0 top-8 flex items-center justify-between px-4">
-                      <div className="rounded-full bg-white/20 px-4 py-1.5 backdrop-blur-md">
-                        <span className="text-xs font-semibold text-white">
-                          OMNI Restaurant
-                        </span>
-                      </div>
-                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/20 backdrop-blur-md">
-                        <span className="text-sm">ℹ️</span>
-                      </div>
+      {/* Interactive Catalog Preview */}
+      <section id="demo" className="pb-24 px-4">
+        <div className="max-w-5xl mx-auto">
+          <div className="relative rounded-3xl bg-slate-50 border border-slate-200 p-4 md:p-12 shadow-2xl shadow-slate-200/50 overflow-hidden">
+            {/* Background Decoration */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-orange-100/40 to-rose-100/40 blur-3xl opacity-60 -z-10 rounded-full translate-x-1/3 -translate-y-1/3" />
+
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              {/* Left: Feature Highlights */}
+              <div className="space-y-8">
+                <div className="space-y-4">
+                  <h2 className="text-2xl font-medium tracking-tight text-slate-900">
+                    Your menu, reimagined for the digital age.
+                  </h2>
+                  <p className="text-sm text-slate-500 leading-relaxed">
+                    Traditional paper menus are expensive and static. Angkor
+                    Menu gives you a dynamic, searchable, and eco-friendly way
+                    to connect with customers.
+                  </p>
+                </div>
+
+                {/* Feature List */}
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <div className="p-2 bg-white border border-slate-100 rounded-lg shadow-sm shrink-0">
+                      <Languages className="w-4 h-4 text-orange-600" />
                     </div>
-
-                    {/* Content Badge */}
-                    <div className="absolute bottom-24 left-4 right-4">
-                      <div className="mb-2 inline-block rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-stone-900">
-                        🌟 Chef&apos;s Special
-                      </div>
-                      <h3 className="text-xl font-bold text-white">
-                        Grilled Salmon
+                    <div>
+                      <h3 className="text-sm font-semibold text-slate-900">
+                        Khmer & English Ready
                       </h3>
-                      <p className="text-sm text-white/70">
-                        Fresh Atlantic salmon with herbs
+                      <p className="text-xs text-slate-500 mt-1">
+                        Native support for multiple languages. Auto-detects user
+                        preference.
                       </p>
                     </div>
+                  </div>
 
-                    {/* Dots */}
-                    <div className="absolute bottom-16 left-1/2 flex -translate-x-1/2 gap-1.5">
-                      <div className="h-1.5 w-6 rounded-full bg-white" />
-                      <div className="h-1.5 w-1.5 rounded-full bg-white/40" />
-                      <div className="h-1.5 w-1.5 rounded-full bg-white/40" />
+                  <div className="flex items-start gap-3">
+                    <div className="p-2 bg-white border border-slate-100 rounded-lg shadow-sm shrink-0">
+                      <Coins className="w-4 h-4 text-orange-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-sm font-semibold text-slate-900">
+                        Multi-Currency Display
+                      </h3>
+                      <p className="text-xs text-slate-500 mt-1">
+                        Display prices in USD ($) and KHR (៛) simultaneously
+                        with auto-conversion.
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Floating Cards */}
-              <div className="absolute -left-4 top-1/4 hidden animate-pulse rounded-2xl border border-stone-200 bg-white p-3 shadow-xl sm:-left-16 sm:block">
-                <div className="flex items-center gap-2">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-100">
-                    <Leaf className="h-4 w-4 text-emerald-600" />
-                  </div>
-                  <span className="text-sm font-medium text-stone-700">
-                    Vegan
-                  </span>
-                </div>
-              </div>
+              {/* Right: Phone UI Mockup with Scaled Iframe */}
+              <div className="relative flex justify-center">
+                {/* Phone Frame */}
+                <div className="relative w-[280px] md:w-[320px] h-[560px] md:h-[640px] bg-slate-900 rounded-[2.5rem] shadow-2xl p-2 md:p-2.5">
+                  {/* Screen container - clips everything */}
+                  <div className="relative w-full h-full rounded-[2rem] overflow-hidden bg-white">
+                    {/* Scaled iframe container - calculated to fill screen exactly */}
+                    {/* Mobile: screen is 264x544, scale = 264/375 = 0.704 */}
+                    {/* Desktop: screen is 300x620, scale = 300/375 = 0.8 */}
+                    <div
+                      className="absolute origin-top-left w-[375px] h-[900px] scale-[0.704] md:scale-[0.8]"
+                      style={{
+                        transformOrigin: 'top left',
+                      }}
+                    >
+                      <iframe
+                        src="/menu/omni"
+                        className="w-full h-full border-0"
+                        title="Angkor Menu Demo"
+                        style={{
+                          pointerEvents: 'none',
+                        }}
+                      />
+                    </div>
 
-              <div
-                className="absolute -right-4 top-1/3 hidden rounded-2xl border border-stone-200 bg-white p-3 shadow-xl sm:-right-20 sm:block"
-                style={{ animationDelay: '0.5s' }}
-              >
-                <div className="flex items-center gap-2">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-amber-100">
-                    <Star className="h-4 w-4 fill-amber-500 text-amber-500" />
+                    {/* Click overlay to go to demo */}
+                    <Link
+                      href="/menu/omni"
+                      className="absolute inset-0 z-10 flex items-center justify-center bg-transparent hover:bg-black/10 transition-colors group"
+                    >
+                      <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-white px-5 py-2.5 rounded-full shadow-xl">
+                        <span className="text-sm font-semibold text-slate-900">View Demo →</span>
+                      </div>
+                    </Link>
                   </div>
-                  <span className="text-sm font-medium text-stone-700">
-                    4.9 Rating
-                  </span>
-                </div>
-              </div>
 
-              <div className="absolute -right-4 bottom-1/4 hidden animate-pulse rounded-2xl border border-stone-200 bg-white p-3 shadow-xl sm:-right-16 sm:block">
-                <div className="flex items-center gap-2">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-red-100">
-                    <Flame className="h-4 w-4 text-red-500" />
-                  </div>
-                  <span className="text-sm font-medium text-stone-700">
-                    Spicy
-                  </span>
+                  {/* Notch */}
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 h-6 w-28 bg-slate-900 rounded-b-xl z-20" />
                 </div>
               </div>
             </div>
@@ -221,389 +215,195 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="border-y border-stone-200 bg-white py-12">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl font-bold text-stone-900 md:text-4xl">
-                  {stat.value}
-                </div>
-                <div className="mt-1 text-sm text-stone-500">{stat.label}</div>
+      {/* Bento Grid Features */}
+      <section id="features" className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="mb-16">
+            <h2 className="text-3xl font-semibold tracking-tight text-slate-900 mb-4">
+              Everything needed to <br />
+              run a smarter business.
+            </h2>
+            <p className="text-slate-500 text-sm max-w-md">
+              Designed for speed, built for reliability. From street food stalls
+              to luxury hotels.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Feature 1: Mobile First */}
+            <div className="group p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-slate-200 transition-all hover:shadow-lg hover:shadow-slate-100/50">
+              <div className="h-10 w-10 bg-white rounded-lg border border-slate-200 flex items-center justify-center mb-6 shadow-sm">
+                <Smartphone className="w-5 h-5 text-slate-700" />
               </div>
-            ))}
+              <h3 className="text-sm font-semibold text-slate-900 mb-2">
+                Mobile-First Design
+              </h3>
+              <p className="text-sm text-slate-500 leading-relaxed">
+                Optimized for smartphones where 80% of customers browse. Fast
+                loading even on 3G connections.
+              </p>
+            </div>
+
+            {/* Feature 2: Smart Search */}
+            <div className="group p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-slate-200 transition-all hover:shadow-lg hover:shadow-slate-100/50">
+              <div className="h-10 w-10 bg-white rounded-lg border border-slate-200 flex items-center justify-center mb-6 shadow-sm">
+                <Search className="w-5 h-5 text-slate-700" />
+              </div>
+              <h3 className="text-sm font-semibold text-slate-900 mb-2">
+                Instant Search & Filter
+              </h3>
+              <p className="text-sm text-slate-500 leading-relaxed">
+                Customers find items instantly as they type. Filter by category,
+                dietary tags, or specials.
+              </p>
+            </div>
+
+            {/* Feature 3: Social Sharing */}
+            <div className="group p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-slate-200 transition-all hover:shadow-lg hover:shadow-slate-100/50">
+              <div className="h-10 w-10 bg-white rounded-lg border border-slate-200 flex items-center justify-center mb-6 shadow-sm">
+                <Share2 className="w-5 h-5 text-slate-700" />
+              </div>
+              <h3 className="text-sm font-semibold text-slate-900 mb-2">
+                Social Sharing
+              </h3>
+              <p className="text-sm text-slate-500 leading-relaxed">
+                Share specific items directly to Telegram, WhatsApp, or Facebook
+                with rich link previews.
+              </p>
+            </div>
+
+            {/* Feature 4 (Span 2): Visuals */}
+            <div className="md:col-span-2 group p-8 rounded-2xl bg-slate-900 text-white relative overflow-hidden">
+              <div className="relative z-10">
+                <div className="h-10 w-10 bg-white/10 rounded-lg flex items-center justify-center mb-6 backdrop-blur-sm">
+                  <ImageIcon className="w-5 h-5 text-white" />
+                </div>
+                <h3 className="text-sm font-semibold text-white mb-2">
+                  Beautiful Visual Experience
+                </h3>
+                <p className="text-sm text-slate-300 leading-relaxed max-w-sm">
+                  Showcase your offerings with stunning hero banners and
+                  multi-image galleries. Support for high-quality photos that
+                  make your products shine.
+                </p>
+              </div>
+              {/* Decorative Element */}
+              <div className="absolute -right-10 -bottom-10 w-64 h-64 bg-orange-600 rounded-full opacity-20 blur-3xl pointer-events-none" />
+            </div>
+
+            {/* Feature 5: Security/Tech */}
+            <div className="group p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-slate-200 transition-all hover:shadow-lg hover:shadow-slate-100/50 flex flex-col justify-between">
+              <div>
+                <div className="h-10 w-10 bg-white rounded-lg border border-slate-200 flex items-center justify-center mb-6 shadow-sm">
+                  <ShieldCheck className="w-5 h-5 text-slate-700" />
+                </div>
+                <h3 className="text-sm font-semibold text-slate-900 mb-2">
+                  Enterprise Security
+                </h3>
+                <p className="text-sm text-slate-500 leading-relaxed">
+                  Built with Row Level Security, HTTPS everywhere, and optimized
+                  for SEO.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Use Cases Section */}
-      <section className="py-16 bg-gradient-to-b from-white to-stone-50">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="mx-auto mb-12 max-w-2xl text-center">
-            <Badge
-              variant="outline"
-              className="mb-4 border-purple-200 bg-purple-50 text-purple-700"
-            >
-              <Globe className="mr-1.5 h-3.5 w-3.5" />
-              Multi-Purpose Platform
-            </Badge>
-            <T.H2 className="mb-4 text-3xl font-bold tracking-tight text-stone-900 sm:text-4xl">
-              Built for Every Business
-            </T.H2>
-            <T.P className="text-lg text-stone-600">
-              One platform, endless possibilities. Create digital catalogs for any industry.
-            </T.P>
+      <section
+        id="use-cases"
+        className="py-20 border-y border-slate-100 bg-slate-50/50"
+      >
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">
+              Versatile Platform
+            </p>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
+              Who is Angkor Menu for?
+            </h2>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
-            {useCases.map((useCase, index) => (
-              <div
-                key={index}
-                className="group relative overflow-hidden rounded-2xl border border-stone-200 bg-white p-6 text-center transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-stone-200/50"
-              >
-                <div className={`mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl ${useCase.bgColor} transition-transform group-hover:scale-110`}>
-                  {useCase.icon}
-                </div>
-                <h3 className="mb-1 font-semibold text-stone-900">{useCase.title}</h3>
-                <p className="text-sm text-stone-500">{useCase.description}</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {/* Use Case 1 */}
+            <div className="bg-white p-6 rounded-xl border border-slate-100 text-center hover:border-orange-200 transition-colors cursor-default">
+              <div className="mx-auto h-12 w-12 bg-orange-50 rounded-full flex items-center justify-center mb-4 text-orange-600">
+                <Utensils className="w-5 h-5" />
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="py-20 md:py-28">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="mx-auto mb-16 max-w-2xl text-center">
-            <Badge
-              variant="outline"
-              className="mb-4 border-orange-200 bg-orange-50 text-orange-700"
-            >
-              <Zap className="mr-1.5 h-3.5 w-3.5" />
-              Powerful Features
-            </Badge>
-            <T.H2 className="mb-4 text-3xl font-bold tracking-tight text-stone-900 sm:text-4xl">
-              Everything You Need for Digital Catalogs
-            </T.H2>
-            <T.P className="text-lg text-stone-600">
-              Built with modern technology to provide the best experience for
-              any business and their customers.
-            </T.P>
-          </div>
-
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {features.map((feature, index) => (
-              <Card
-                key={index}
-                className="group relative overflow-hidden border-stone-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-stone-200/50"
-              >
-                <div className="absolute right-0 top-0 h-32 w-32 rounded-bl-full bg-gradient-to-bl from-amber-100/50 to-transparent" />
-                <CardHeader className="relative">
-                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-100 to-orange-100 shadow-lg shadow-amber-100/50 transition-transform duration-300 group-hover:scale-110">
-                    {feature.icon}
-                  </div>
-                  <CardTitle className="text-xl text-stone-900">
-                    {feature.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base leading-relaxed text-stone-600">
-                    {feature.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Demo Preview Section */}
-      <section className="bg-gradient-to-br from-stone-900 via-stone-800 to-stone-900 py-20 md:py-28">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-            <div>
-              <Badge className="mb-6 border-amber-500/30 bg-amber-500/10 text-amber-400">
-                <Star className="mr-1.5 h-3.5 w-3.5 fill-amber-400" />
-                Live Demo Available
-              </Badge>
-              <T.H2 className="mb-6 text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
-                See It In Action
-              </T.H2>
-              <T.P className="mb-8 text-lg leading-relaxed text-stone-400">
-                Experience our digital menu platform with a real restaurant
-                demo. Browse categories, search items, view details, and see how
-                your customers will interact with your menu.
-              </T.P>
-
-              <div className="mb-8 space-y-4">
-                {demoFeatures.map((feature, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-amber-500/20">
-                      <div className="h-2 w-2 rounded-full bg-amber-500" />
-                    </div>
-                    <span className="text-stone-300">{feature}</span>
-                  </div>
-                ))}
-              </div>
-
-              <Button
-                size="lg"
-                asChild
-                className="group h-12 bg-gradient-to-r from-amber-500 to-orange-600 px-8 text-base font-semibold text-white shadow-xl shadow-amber-500/20"
-              >
-                <Link href="/menu/omni">
-                  Try OMNI Restaurant Demo
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </Button>
+              <h3 className="text-sm font-semibold text-slate-900">
+                Restaurants
+              </h3>
+              <p className="text-xs text-slate-500 mt-2">
+                Digital menus & specials
+              </p>
             </div>
 
-            <div className="relative">
-              <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-amber-500/20 to-orange-500/20 blur-2xl" />
-              <div className="relative overflow-hidden rounded-3xl border border-stone-700/50 bg-stone-800 shadow-2xl">
-                <Image
-                  src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop"
-                  alt="Restaurant interior"
-                  width={800}
-                  height={600}
-                  className="aspect-[4/3] w-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-stone-900/90 via-stone-900/40 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <div className="mb-2 inline-block rounded-full bg-amber-500/20 px-3 py-1 text-xs font-medium text-amber-400 backdrop-blur-sm">
-                    Featured Restaurant
-                  </div>
-                  <h3 className="mb-1 text-2xl font-bold text-white">
-                    OMNI Restaurant
-                  </h3>
-                  <p className="text-stone-400">
-                    Modern dining experience with curated seasonal dishes
-                  </p>
-                </div>
+            {/* Use Case 2 */}
+            <div className="bg-white p-6 rounded-xl border border-slate-100 text-center hover:border-orange-200 transition-colors cursor-default">
+              <div className="mx-auto h-12 w-12 bg-blue-50 rounded-full flex items-center justify-center mb-4 text-blue-600">
+                <ShoppingBag className="w-5 h-5" />
               </div>
+              <h3 className="text-sm font-semibold text-slate-900">
+                Retail Stores
+              </h3>
+              <p className="text-xs text-slate-500 mt-2">
+                Product catalogs & inventory
+              </p>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* How It Works */}
-      <section className="py-20 md:py-28">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="mx-auto mb-16 max-w-2xl text-center">
-            <Badge
-              variant="outline"
-              className="mb-4 border-amber-200 bg-amber-50 text-amber-700"
-            >
-              Simple Setup
-            </Badge>
-            <T.H2 className="mb-4 text-3xl font-bold tracking-tight text-stone-900 sm:text-4xl">
-              Get Started in Minutes
-            </T.H2>
-            <T.P className="text-lg text-stone-600">
-              Create your digital catalog and share it with customers in three easy
-              steps.
-            </T.P>
-          </div>
+            {/* Use Case 3 */}
+            <div className="bg-white p-6 rounded-xl border border-slate-100 text-center hover:border-orange-200 transition-colors cursor-default">
+              <div className="mx-auto h-12 w-12 bg-emerald-50 rounded-full flex items-center justify-center mb-4 text-emerald-600">
+                <Hotel className="w-5 h-5" />
+              </div>
+              <h3 className="text-sm font-semibold text-slate-900">Hotels</h3>
+              <p className="text-xs text-slate-500 mt-2">
+                Room service & amenities
+              </p>
+            </div>
 
-          <div className="relative mx-auto max-w-4xl">
-            {/* Connection Line */}
-            <div className="absolute left-1/2 top-8 hidden h-[calc(100%-4rem)] w-0.5 -translate-x-1/2 bg-gradient-to-b from-amber-300 via-orange-300 to-red-300 md:block" />
-
-            <div className="space-y-12">
-              {steps.map((step, index) => (
-                <div
-                  key={index}
-                  className={`relative flex flex-col items-center gap-6 md:flex-row ${index % 2 === 1 ? 'md:flex-row-reverse' : ''
-                    }`}
-                >
-                  <div
-                    className={`flex-1 ${index % 2 === 1 ? 'md:text-right' : ''
-                      }`}
-                  >
-                    <div
-                      className={`inline-flex items-center gap-2 ${index % 2 === 1 ? 'md:flex-row-reverse' : ''
-                        }`}
-                    >
-                      <span className="text-sm font-bold text-amber-600">
-                        Step {index + 1}
-                      </span>
-                    </div>
-                    <h3 className="mt-2 text-xl font-bold text-stone-900">
-                      {step.title}
-                    </h3>
-                    <p className="mt-2 text-stone-600">{step.description}</p>
-                  </div>
-
-                  <div className="relative z-10 flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 shadow-lg shadow-amber-500/30">
-                    {step.icon}
-                  </div>
-
-                  <div className="flex-1" />
-                </div>
-              ))}
+            {/* Use Case 4 */}
+            <div className="bg-white p-6 rounded-xl border border-slate-100 text-center hover:border-orange-200 transition-colors cursor-default">
+              <div className="mx-auto h-12 w-12 bg-purple-50 rounded-full flex items-center justify-center mb-4 text-purple-600">
+                <Bus className="w-5 h-5" />
+              </div>
+              <h3 className="text-sm font-semibold text-slate-900">Transport</h3>
+              <p className="text-xs text-slate-500 mt-2">Routes & ticketing</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-amber-500 via-orange-500 to-red-500 py-20 md:py-28">
-        <div
-          className="absolute inset-0 opacity-30"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          }}
-        />
-
-        <div className="container relative mx-auto px-4 md:px-6">
-          <div className="mx-auto max-w-3xl text-center">
-            <T.H2 className="mb-6 text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
-              Ready to Go Digital?
-            </T.H2>
-            <T.P className="mx-auto mb-8 max-w-2xl text-lg text-white/90">
-              Join thousands of businesses worldwide using digital catalogs to enhance their
-              customer experience. Start free, upgrade anytime.
-            </T.P>
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              <Button
-                size="lg"
-                asChild
-                className="h-12 bg-white px-8 text-base font-semibold text-orange-600 shadow-xl hover:bg-stone-100"
-              >
-                <Link href="/login">
-                  Get Started Free
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                asChild
-                className="h-12 border-white/30 bg-white/10 px-8 text-base font-semibold text-white backdrop-blur-sm hover:bg-white/20"
-              >
-                <Link href="/menu/omni">View Demo First</Link>
-              </Button>
-            </div>
+      <section className="py-32 px-6">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-tighter text-slate-900 mb-6">
+            Ready to digitize your business?
+          </h2>
+          <p className="text-lg text-slate-500 mb-10 font-normal">
+            Join businesses across Southeast Asia modernizing their workflow.{' '}
+            <br /> Setup takes less than 15 minutes.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link
+              href="/login"
+              className="w-full sm:w-auto px-8 py-3 bg-slate-900 text-white text-sm font-medium rounded-lg hover:bg-slate-800 transition-all shadow-lg shadow-slate-900/10"
+            >
+              Get Started for Free
+            </Link>
+            <Link
+              href="mailto:support@angkormenu.com"
+              className="w-full sm:w-auto px-8 py-3 bg-white text-slate-900 border border-slate-200 text-sm font-medium rounded-lg hover:bg-slate-50 transition-all"
+            >
+              Contact Sales
+            </Link>
           </div>
+          <p className="text-xs text-slate-400 mt-6">
+            Proudly built in Cambodia 🇰🇭
+          </p>
         </div>
       </section>
     </div>
   );
 }
-
-const stats = [
-  { value: '10K+', label: 'Catalogs Created' },
-  { value: '500+', label: 'Businesses' },
-  { value: '99.9%', label: 'Uptime' },
-  { value: '4.9★', label: 'Rating' },
-];
-
-const useCases = [
-  {
-    title: 'Restaurants',
-    description: 'Digital menus',
-    icon: <Utensils className="h-6 w-6 text-amber-600" />,
-    bgColor: 'bg-amber-100',
-  },
-  {
-    title: 'Transportation',
-    description: 'Tickets & routes',
-    icon: <Bus className="h-6 w-6 text-blue-600" />,
-    bgColor: 'bg-blue-100',
-  },
-  {
-    title: 'Retail',
-    description: 'Product catalogs',
-    icon: <ShoppingBag className="h-6 w-6 text-emerald-600" />,
-    bgColor: 'bg-emerald-100',
-  },
-  {
-    title: 'Hotels',
-    description: 'Room & services',
-    icon: <Hotel className="h-6 w-6 text-purple-600" />,
-    bgColor: 'bg-purple-100',
-  },
-  {
-    title: 'Events',
-    description: 'Tickets & shows',
-    icon: <Ticket className="h-6 w-6 text-pink-600" />,
-    bgColor: 'bg-pink-100',
-  },
-  {
-    title: 'Services',
-    description: 'Service listings',
-    icon: <Wrench className="h-6 w-6 text-slate-600" />,
-    bgColor: 'bg-slate-100',
-  },
-];
-
-const features = [
-  {
-    title: 'Mobile-First Design',
-    description:
-      'Optimized for smartphones with smooth scrolling, touch gestures, and fast loading. Your catalog looks stunning on any device.',
-    icon: <Smartphone className="h-6 w-6 text-amber-600" />,
-  },
-  {
-    title: 'Smart Search & Filter',
-    description:
-      'Customers can easily find items by name, category, or tags. Powerful filtering makes browsing effortless.',
-    icon: <Search className="h-6 w-6 text-amber-600" />,
-  },
-  {
-    title: 'Custom Badges & Tags',
-    description:
-      'Highlight important information with beautiful badges. Mark items as new, popular, on sale, or with any custom tag.',
-    icon: <Leaf className="h-6 w-6 text-amber-600" />,
-  },
-  {
-    title: 'Flexible Categories',
-    description:
-      'Organize your catalog into clear categories. Works for menu sections, product types, routes, services, and more.',
-    icon: <Filter className="h-6 w-6 text-amber-600" />,
-  },
-  {
-    title: 'Brand Customization',
-    description:
-      'Match your brand with custom colors, logos, and styling. Create a consistent experience for your customers.',
-    icon: <Palette className="h-6 w-6 text-amber-600" />,
-  },
-  {
-    title: 'Multi-Language Support',
-    description:
-      'Reach a global audience with built-in multi-language support. Switch between languages with one tap.',
-    icon: <Globe className="h-6 w-6 text-amber-600" />,
-  },
-];
-
-const demoFeatures = [
-  'Browse full menu with beautiful imagery',
-  'Filter by categories and dietary preferences',
-  'Search for specific dishes instantly',
-  'View detailed item information and pricing',
-  'See restaurant info, hours, and contact details',
-  'Experience smooth mobile-first interactions',
-];
-
-const steps = [
-  {
-    title: 'Create Your Catalog',
-    description:
-      'Sign up and add your business details, categories, and items with photos and descriptions.',
-    icon: <ChefHat className="h-7 w-7 text-white" />,
-  },
-  {
-    title: 'Customize Your Brand',
-    description:
-      'Upload your logo, set your brand colors, and personalize the look and feel of your digital catalog.',
-    icon: <Palette className="h-7 w-7 text-white" />,
-  },
-  {
-    title: 'Share with Customers',
-    description:
-      'Generate a QR code or share your unique link. Customers can access your catalog instantly on any device.',
-    icon: <QrCode className="h-7 w-7 text-white" />,
-  },
-];
