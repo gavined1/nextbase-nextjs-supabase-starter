@@ -1,6 +1,6 @@
 'use client';
 
-import { Check, Link2, MessageCircle, Share2, X } from 'lucide-react';
+import { Check, Link2, Share2, X } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useMenuLocale } from './locale';
 import type { MenuClient, MenuItemWithCategory } from './types';
@@ -125,23 +125,20 @@ export function ShareButton({ item, client, className = '' }: ShareButtonProps) 
         setIsOpen(false);
     }, [shareMessage, shareUrl]);
 
-    // Share to Facebook Messenger
-    const handleMessenger = useCallback(() => {
+    // Share to Facebook
+    const handleFacebook = useCallback(() => {
         const url = encodeURIComponent(shareUrl);
-        window.open(`https://www.facebook.com/dialog/send?link=${url}&app_id=291494419107518&redirect_uri=${encodeURIComponent(window.location.href)}`, '_blank');
+        window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
         setIsOpen(false);
     }, [shareUrl]);
 
-    // Contact seller via WhatsApp (if phone available)
-    const handleContactSeller = useCallback(() => {
-        if (!client.phone) return;
-
-        // Clean phone number (remove spaces, dashes, etc.)
-        const phone = client.phone.replace(/[^0-9+]/g, '');
-        const text = encodeURIComponent(`${t('askAboutItem')}:\n\n${itemName}\n${shareUrl}`);
-        window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
+    // Share to Messenger
+    const handleMessenger = useCallback(() => {
+        const url = encodeURIComponent(shareUrl);
+        // Works on mobile (opens Messenger app) and desktop (opens messenger.com)
+        window.open(`https://www.messenger.com/t/?link=${url}`, '_blank');
         setIsOpen(false);
-    }, [client.phone, itemName, shareUrl, t]);
+    }, [shareUrl]);
 
     // Handle main share button click - use native share on mobile if available
     const handleShareButtonClick = useCallback(async () => {
@@ -230,22 +227,6 @@ export function ShareButton({ item, client, className = '' }: ShareButtonProps) 
                                 </div>
                             </button>
 
-                            {/* Contact Seller (if phone available) */}
-                            {client.phone && (
-                                <button
-                                    onClick={handleContactSeller}
-                                    className="w-full flex items-center gap-4 p-4 bg-green-50 hover:bg-green-100 rounded-2xl transition-colors"
-                                >
-                                    <div className="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center">
-                                        <MessageCircle className="w-6 h-6 text-white" />
-                                    </div>
-                                    <div className="text-left">
-                                        <p className="font-medium text-gray-900">{t('askAboutItem')}</p>
-                                        <p className="text-xs text-gray-500">WhatsApp</p>
-                                    </div>
-                                </button>
-                            )}
-
                             {/* Share Apps */}
                             <div className="pt-2">
                                 <p className="text-xs font-medium text-gray-400 uppercase tracking-wider mb-3">
@@ -276,6 +257,19 @@ export function ShareButton({ item, client, className = '' }: ShareButtonProps) 
                                             </svg>
                                         </div>
                                         <span className="text-xs text-gray-600">Telegram</span>
+                                    </button>
+
+                                    {/* Facebook */}
+                                    <button
+                                        onClick={handleFacebook}
+                                        className="flex flex-col items-center gap-2"
+                                    >
+                                        <div className="w-14 h-14 rounded-full bg-[#1877F2] flex items-center justify-center hover:scale-105 transition-transform">
+                                            <svg className="w-7 h-7 text-white" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                                            </svg>
+                                        </div>
+                                        <span className="text-xs text-gray-600">Facebook</span>
                                     </button>
 
                                     {/* Messenger */}

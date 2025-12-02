@@ -7,12 +7,15 @@ import { Suspense } from 'react';
 
 interface MenuPageProps {
   params: Promise<{ slug: string }>;
+  searchParams: Promise<{ item?: string }>;
 }
 
 export async function generateMetadata({
   params,
+  searchParams,
 }: MenuPageProps): Promise<Metadata> {
   const { slug } = await params;
+  const { item: itemSlug } = await searchParams;
   const data = await getFullMenuData(slug);
 
   if (!data) {
@@ -21,6 +24,46 @@ export async function generateMetadata({
     };
   }
 
+  // If an item is specified, show item-specific metadata
+  if (itemSlug) {
+    const item = data.items.find((i) => i.slug === itemSlug);
+    if (item) {
+      const itemImage = item.images?.[0] || item.image_url;
+      const price = item.price ? ` - $${item.price}` : '';
+      const title = `${item.name}${price}`;
+      const description = item.description || `${item.name} at ${data.client.name}`;
+
+      return {
+        title: `${item.name} | ${data.client.name}`,
+        description,
+        openGraph: {
+          title,
+          description,
+          siteName: data.client.name,
+          images: itemImage
+            ? [
+              {
+                url: itemImage,
+                width: 1200,
+                height: 630,
+                alt: item.name,
+              },
+            ]
+            : data.client.cover_image_url
+              ? [data.client.cover_image_url]
+              : [],
+        },
+        twitter: {
+          card: 'summary_large_image',
+          title,
+          description,
+          images: itemImage ? [itemImage] : [],
+        },
+      };
+    }
+  }
+
+  // Default: show client/business metadata
   return {
     title: `${data.client.name} - Digital Menu`,
     description:

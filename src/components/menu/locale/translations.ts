@@ -69,7 +69,6 @@ const englishTranslations = {
   copyLink: 'Copy Link',
   linkCopied: 'Link copied!',
   shareVia: 'Share via',
-  askAboutItem: 'Ask about this item',
 
   // Currency & Language
   currency: 'Currency',
@@ -156,7 +155,6 @@ export const uiTranslations: Translations = {
     copyLink: 'ចម្លងតំណ',
     linkCopied: 'បានចម្លងតំណ!',
     shareVia: 'ចែករំលែកតាម',
-    askAboutItem: 'សួរអំពីម៉ឺនុយនេះ',
 
     // Currency & Language
     currency: 'រូបិយប័ណ្ណ',
