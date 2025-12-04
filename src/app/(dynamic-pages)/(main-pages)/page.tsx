@@ -1,6 +1,5 @@
 'use client';
 
-import { WarpBackground } from '@/components/ui/shadcn-io/warp-background';
 import { useTheme } from '@/stores/theme-store';
 import {
   ArrowRight,
@@ -221,18 +220,11 @@ export default function LandingPage() {
       {/* Interactive Catalog Preview */}
       <section id="demo" className="pb-24 px-4 relative">
         <div className="max-w-5xl mx-auto">
-          <WarpBackground
+          <div
             className={`rounded-3xl p-4 md:p-12 shadow-2xl transition-colors duration-500 ${isDark
               ? 'bg-slate-900/80 border-white/10 shadow-black/50'
               : 'bg-white/90 border-slate-200 shadow-slate-200/50'
               }`}
-            perspective={100}
-            beamsPerSide={2}
-            beamSize={12}
-            beamDelayMax={4}
-            beamDelayMin={0}
-            beamDuration={6}
-            gridColor={isDark ? 'rgba(99, 102, 241, 0.1)' : 'rgba(226, 232, 240, 0.6)'}
           >
 
             <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -373,7 +365,7 @@ export default function LandingPage() {
                 </div>
               </div>
             </div>
-          </WarpBackground>
+          </div>
         </div>
       </section>
 

@@ -92,7 +92,7 @@
     "jsdom": "^21.1.2",
     "lucide-react": "^0.546.0",
     "motion": "^12.23.25",
-    "next": "^16.0.1",
+    "next": "^16.0.7",
     "next-nprogress-bar": "^2.4.7",
     "next-safe-action": "^7.10.5",
     "next-seo": "^5.15.0",
@@ -102,9 +102,9 @@
     "path-to-regexp": "^8.2.0",
     "postcss": "^8.5.3",
     "prettier": "^2.8.8",
-    "react": "19.1.0",
+    "react": "19.1.2",
     "react-day-picker": "9.11.1",
-    "react-dom": "19.1.0",
+    "react-dom": "19.1.2",
     "react-hook-form": "^7.55.0",
     "react-hot-toast": "^2.5.2",
     "react-no-ssr": "^1.1.0",
@@ -145,7 +145,7 @@
       "@semantic-release/github"
     ]
   },
-  "packageManager": "pnpm@9.0.6+sha512.f6d863130973207cb7a336d6b439a242a26ac8068077df530d6a86069419853dc1ffe64029ec594a9c505a3a410d19643c870aba6776330f5cfddcf10a9c1617",
+  "packageManager": "pnpm@10.24.0",
   "engines": {
     "node": ">=22.0.0",
     "pnpm": ">=9.0.0"
