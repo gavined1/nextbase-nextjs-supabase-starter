@@ -33,7 +33,7 @@ Angkor Menu is a modern digital menu and catalog platform built with Next.js 16 
 
 ### Prerequisites
 
-- Node.js 22 or higher (recommended to use [nvm](https://github.com/nvm-sh/nvm))
+- Node.js 24 or higher (recommended to use [nvm](https://github.com/nvm-sh/nvm))
 - pnpm package manager
 - Supabase account
 
