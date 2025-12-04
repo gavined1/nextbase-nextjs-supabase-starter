@@ -1,9 +1,33 @@
+import { getSiteBaseUrl } from '@/utils/og-helpers';
 import { Metadata } from 'next';
 import Link from 'next/link';
+
+const siteUrl = getSiteBaseUrl();
 
 export const metadata: Metadata = {
     title: 'Terms of Service | Angkor Menu',
     description: 'Terms of Service for Angkor Menu - Read our terms and conditions for using our digital menu platform.',
+    openGraph: {
+        type: 'website',
+        url: `${siteUrl}/terms`,
+        siteName: 'Angkor Menu',
+        title: 'Terms of Service | Angkor Menu',
+        description: 'Terms of Service for Angkor Menu - Read our terms and conditions for using our digital menu platform.',
+        images: [
+            {
+                url: `${siteUrl}/logos/angkor-menu-logo.png`,
+                width: 1200,
+                height: 630,
+                alt: 'Angkor Menu - Terms of Service',
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Terms of Service | Angkor Menu',
+        description: 'Terms of Service for Angkor Menu - Read our terms and conditions for using our digital menu platform.',
+        images: [`${siteUrl}/logos/angkor-menu-logo.png`],
+    },
 };
 
 export default function TermsOfServicePage() {

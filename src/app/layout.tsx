@@ -72,10 +72,48 @@ const roboto_mono = localFont({
   display: 'swap',
 });
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.NEXT_PUBLIC_VERCEL_URL
+    ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+    : 'https://angkormenu.com');
+
 export const metadata: Metadata = {
-  title: 'Angkor Menu - Digital Catalogs for Any Business',
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: 'Angkor Menu - Digital Catalogs for Any Business',
+    template: '%s | Angkor Menu',
+  },
   description:
     'Create beautiful digital menus and catalogs for your business. QR code ready, mobile-first, and easy to customize.',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: siteUrl,
+    siteName: 'Angkor Menu',
+    title: 'Angkor Menu - Digital Catalogs for Any Business',
+    description:
+      'Create beautiful digital menus and catalogs for your business. QR code ready, mobile-first, and easy to customize.',
+    images: [
+      {
+        url: `${siteUrl}/logos/angkor-menu-logo.png`,
+        width: 1200,
+        height: 630,
+        alt: 'Angkor Menu - Digital Catalogs for Any Business',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Angkor Menu - Digital Catalogs for Any Business',
+    description:
+      'Create beautiful digital menus and catalogs for your business. QR code ready, mobile-first, and easy to customize.',
+    images: [`${siteUrl}/logos/angkor-menu-logo.png`],
+  },
+  icons: {
+    icon: '/logos/angkor-menu-favicon.png',
+    apple: '/logos/angkor-menu-favicon.png',
+  },
 };
 
 export default async function RootLayout({

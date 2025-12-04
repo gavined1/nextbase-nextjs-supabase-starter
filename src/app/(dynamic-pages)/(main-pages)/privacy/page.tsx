@@ -1,9 +1,33 @@
+import { getSiteBaseUrl } from '@/utils/og-helpers';
 import { Metadata } from 'next';
 import Link from 'next/link';
+
+const siteUrl = getSiteBaseUrl();
 
 export const metadata: Metadata = {
     title: 'Privacy Policy | Angkor Menu',
     description: 'Privacy Policy for Angkor Menu - Learn how we collect, use, and protect your personal information.',
+    openGraph: {
+        type: 'website',
+        url: `${siteUrl}/privacy`,
+        siteName: 'Angkor Menu',
+        title: 'Privacy Policy | Angkor Menu',
+        description: 'Privacy Policy for Angkor Menu - Learn how we collect, use, and protect your personal information.',
+        images: [
+            {
+                url: `${siteUrl}/logos/angkor-menu-logo.png`,
+                width: 1200,
+                height: 630,
+                alt: 'Angkor Menu - Privacy Policy',
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Privacy Policy | Angkor Menu',
+        description: 'Privacy Policy for Angkor Menu - Learn how we collect, use, and protect your personal information.',
+        images: [`${siteUrl}/logos/angkor-menu-logo.png`],
+    },
 };
 
 export default function PrivacyPolicyPage() {

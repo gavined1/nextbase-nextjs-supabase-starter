@@ -1,6 +1,7 @@
 import type { MenuItemWithCategory } from '@/components/menu';
 import { DigitalMenu } from '@/components/menu';
 import { getFullMenuData } from '@/rsc-data/menu/queries';
+import { getAbsoluteImageUrl, getSiteBaseUrl } from '@/utils/og-helpers';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
@@ -32,49 +33,74 @@ export async function generateMetadata({
             const price = item.price ? ` - $${item.price}` : '';
             const title = `${item.name}${price}`;
             const description = item.description || `${item.name} at ${data.client.name}`;
+            const siteUrl = getSiteBaseUrl();
+            const ogImageUrl = getAbsoluteImageUrl(itemImage) || getAbsoluteImageUrl(data.client.cover_image_url);
 
             return {
                 title: `${item.name} | ${data.client.name}`,
                 description,
                 openGraph: {
+                    type: 'website',
+                    url: `${siteUrl}/${slug}?item=${itemSlug}`,
+                    siteName: data.client.name,
                     title,
                     description,
-                    siteName: data.client.name,
-                    images: itemImage
+                    images: ogImageUrl
                         ? [
                             {
-                                url: itemImage,
+                                url: ogImageUrl,
                                 width: 1200,
                                 height: 630,
                                 alt: item.name,
                             },
                         ]
-                        : data.client.cover_image_url
-                            ? [data.client.cover_image_url]
-                            : [],
+                        : [],
                 },
                 twitter: {
                     card: 'summary_large_image',
                     title,
                     description,
-                    images: itemImage ? [itemImage] : [],
+                    images: ogImageUrl ? [ogImageUrl] : [],
                 },
             };
         }
     }
 
     // Default: show client/business metadata
+    const siteUrl = getSiteBaseUrl();
+    const ogImageUrl = getAbsoluteImageUrl(data.client.cover_image_url);
+
     return {
         title: `${data.client.name} - Digital Menu`,
         description:
             data.client.description ||
             `View the digital menu for ${data.client.name}`,
         openGraph: {
+            type: 'website',
+            url: `${siteUrl}/${slug}`,
+            siteName: data.client.name,
             title: `${data.client.name} - Digital Menu`,
             description:
                 data.client.description ||
                 `View the digital menu for ${data.client.name}`,
-            images: data.client.cover_image_url ? [data.client.cover_image_url] : [],
+            images: ogImageUrl
+                ? [
+                    {
+                        url: ogImageUrl,
+                        width: 1200,
+                        height: 630,
+                        alt: `${data.client.name} - Digital Menu`,
+                    },
+                ]
+                : [],
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: `${data.client.name} - Digital Menu`,
+            description:
+                data.client.description ||
+                `View the digital menu for ${data.client.name}`,
+            images: ogImageUrl ? [ogImageUrl] : [],
         },
     };
 }
