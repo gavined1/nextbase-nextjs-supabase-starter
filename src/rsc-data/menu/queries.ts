@@ -8,6 +8,7 @@
  */
 
 import type { Tables } from '@/lib/database.types';
+import { cacheLife, cacheTag } from 'next/cache';
 import { createPublicSupabaseClient } from '@/supabase-clients/public';
 import { cache } from 'react';
 
@@ -49,6 +50,10 @@ const getPublicSupabase = () => createPublicSupabaseClient();
  * Get a client by their slug
  */
 export const getMenuClientBySlug = cache(async (slug: string) => {
+  'use cache'
+  cacheTag('menu-clients', `menu-client-${slug}`)
+  cacheLife({ expire: 60 }) // Cache for 60 seconds
+
   const supabase = getPublicSupabase();
 
   const { data, error } = await supabase
@@ -70,6 +75,10 @@ export const getMenuClientBySlug = cache(async (slug: string) => {
  * Get all categories for a client
  */
 export const getMenuCategories = cache(async (clientId: string) => {
+  'use cache'
+  cacheTag('menu-categories', `menu-categories-${clientId}`)
+  cacheLife({ expire: 60 }) // Cache for 60 seconds
+
   const supabase = getPublicSupabase();
 
   const { data, error } = await supabase
@@ -92,6 +101,13 @@ export const getMenuCategories = cache(async (clientId: string) => {
  */
 export const getMenuItems = cache(
   async (clientId: string, categorySlug?: string) => {
+    'use cache'
+    const tagKey = categorySlug && categorySlug !== 'all' 
+      ? `menu-items-${clientId}-${categorySlug}`
+      : `menu-items-${clientId}`
+    cacheTag('menu-items', tagKey)
+    cacheLife({ expire: 60 }) // Cache for 60 seconds
+
     const supabase = getPublicSupabase();
 
     let query = supabase
@@ -136,6 +152,10 @@ export const getMenuItems = cache(
  * Get featured/hero items for carousel
  */
 export const getMenuFeaturedItems = cache(async (clientId: string) => {
+  'use cache'
+  cacheTag('menu-featured-items', `menu-featured-${clientId}`)
+  cacheLife({ expire: 60 }) // Cache for 60 seconds
+
   const supabase = getPublicSupabase();
 
   const { data, error } = await supabase
@@ -159,6 +179,10 @@ export const getMenuFeaturedItems = cache(async (clientId: string) => {
  */
 export const getFullMenuData = cache(
   async (clientSlug: string): Promise<FullMenuData | null> => {
+    'use cache'
+    cacheTag('menu-data', `menu-data-${clientSlug}`)
+    cacheLife({ expire: 60 }) // Cache for 60 seconds
+
     const client = await getMenuClientBySlug(clientSlug);
 
     if (!client) {

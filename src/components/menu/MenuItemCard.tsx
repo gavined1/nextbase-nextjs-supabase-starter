@@ -15,6 +15,7 @@ import type { MenuItemBadgeType, MenuItemWithCategory } from './types';
 interface MenuItemCardProps {
   item: MenuItemWithCategory;
   onItemClick: (item: MenuItemWithCategory) => void;
+  priority?: boolean;
 }
 
 const badgeConfig: Record<
@@ -71,7 +72,7 @@ const badgeConfig: Record<
   },
 };
 
-export function MenuItemCard({ item, onItemClick }: MenuItemCardProps) {
+export function MenuItemCard({ item, onItemClick, priority = false }: MenuItemCardProps) {
   const { t, formatPrice, getLocalizedText, getLocalizedDescription } = useMenuLocale();
 
   const primaryBadge = item.badges?.[0];
@@ -102,6 +103,9 @@ export function MenuItemCard({ item, onItemClick }: MenuItemCardProps) {
             fill
             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
             className="object-cover transition-transform duration-500 group-hover:scale-105"
+            quality={80}
+            priority={priority}
+            loading={priority ? 'eager' : 'lazy'}
           />
         ) : (
           <div className="w-full h-full bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
@@ -117,17 +121,17 @@ export function MenuItemCard({ item, onItemClick }: MenuItemCardProps) {
           <span className="text-sm font-bold text-gray-900">
             {formatPrice(item.price)}
           </span>
-        {badgeInfo && BadgeIcon && (
-          <div
+          {badgeInfo && BadgeIcon && (
+            <div
               className={`px-1.5 py-0.5 rounded ${badgeInfo.bg} flex items-center gap-0.5`}
-          >
+            >
               <BadgeIcon className={`w-2.5 h-2.5 ${badgeInfo.color}`} />
               <span className={`text-[9px] font-semibold ${badgeInfo.color}`}>
                 {t(badgeInfo.labelKey)}
-            </span>
-          </div>
-        )}
-      </div>
+              </span>
+            </div>
+          )}
+        </div>
 
         {/* Name */}
         <h3 className="font-medium text-gray-900 text-[13px] leading-tight line-clamp-2 min-h-[2rem]">
@@ -137,15 +141,15 @@ export function MenuItemCard({ item, onItemClick }: MenuItemCardProps) {
         {/* Description */}
         <p className="text-[11px] text-gray-400 line-clamp-1 mt-0.5">
           {itemDescription || '\u00A0'}
-          </p>
+        </p>
 
         {/* Category Row */}
         <div className="flex items-center gap-1.5 mt-auto pt-1 overflow-hidden">
           {categoryName && (
             <span className="text-[10px] text-gray-400 truncate min-w-0">
               • {categoryName}
-          </span>
-            )}
+            </span>
+          )}
         </div>
       </div>
     </div>

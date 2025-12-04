@@ -68,6 +68,8 @@ export function RestaurantInfoDrawer({
                                 fill
                                 sizes="100vw"
                                 className="object-cover"
+                                quality={85}
+                                loading="lazy"
                             />
                         ) : (
                             <div className="w-full h-full bg-gradient-to-br from-gray-800 to-gray-900" />
@@ -96,6 +98,8 @@ export function RestaurantInfoDrawer({
                                         width={64}
                                         height={64}
                                         className="object-cover w-full h-full"
+                                        quality={80}
+                                        loading="lazy"
                                     />
                                 ) : (
                                     <div className="w-full h-full bg-gray-900 flex items-center justify-center">

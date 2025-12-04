@@ -67,8 +67,13 @@ export function MenuGrid({
 
       {/* Grid - 2 columns on mobile, responsive on larger screens */}
       <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 items-stretch">
-        {items.map((item) => (
-          <MenuItemCard key={item.id} item={item} onItemClick={onItemClick} />
+        {items.map((item, index) => (
+          <MenuItemCard 
+            key={item.id} 
+            item={item} 
+            onItemClick={onItemClick}
+            priority={index < 4}
+          />
         ))}
       </div>
     </main>

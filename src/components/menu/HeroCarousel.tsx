@@ -127,7 +127,7 @@ export function HeroCarousel({ featuredItems }: HeroCarouselProps) {
   const goToSlide = useCallback(
     (index: number) => {
       setIsAutoPlaying(false);
-    setActiveIndex(index);
+      setActiveIndex(index);
       scrollToSlide(index);
     },
     [scrollToSlide]
@@ -148,41 +148,43 @@ export function HeroCarousel({ featuredItems }: HeroCarouselProps) {
           const subtitle = getLocalizedSubtitle(item);
 
           return (
-          <div
-            key={item.id}
+            <div
+              key={item.id}
               ref={(el) => {
                 slideRefs.current[index] = el;
               }}
-            className="flex-shrink-0 w-full h-full snap-center relative"
-          >
-            <Image
-              src={item.image_url}
+              className="flex-shrink-0 w-full h-full snap-center relative"
+            >
+              <Image
+                src={item.image_url}
                 alt={title}
-              fill
+                fill
                 sizes="100vw"
-              className="object-cover"
-              priority={index === 0}
-            />
-            {/* Gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20" />
+                className="object-cover"
+                priority={index === 0}
+                quality={85}
+                loading={index === 0 ? 'eager' : 'lazy'}
+              />
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20" />
 
-            {/* Content - Clean and minimal */}
-            <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6">
-              {item.badge_text && (
-                <span className="inline-block px-3 py-1 bg-white/90 rounded-full text-xs font-semibold text-gray-900 mb-3">
-                  {item.badge_text}
-                </span>
-              )}
-              <h1 className="text-xl sm:text-2xl font-bold text-white leading-tight">
+              {/* Content - Clean and minimal */}
+              <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6">
+                {item.badge_text && (
+                  <span className="inline-block px-3 py-1 bg-white/90 rounded-full text-xs font-semibold text-gray-900 mb-3">
+                    {item.badge_text}
+                  </span>
+                )}
+                <h1 className="text-xl sm:text-2xl font-bold text-white leading-tight">
                   {title}
-              </h1>
+                </h1>
                 {subtitle && (
-                <p className="text-white/60 text-sm mt-1 line-clamp-1">
+                  <p className="text-white/60 text-sm mt-1 line-clamp-1">
                     {subtitle}
-                </p>
-              )}
+                  </p>
+                )}
+              </div>
             </div>
-          </div>
           );
         })}
       </div>
@@ -196,9 +198,9 @@ export function HeroCarousel({ featuredItems }: HeroCarouselProps) {
               onClick={() => goToSlide(index)}
               aria-label={`Go to slide ${index + 1}`}
               className={`rounded-full transition-all duration-300 ${index === activeIndex
-                  ? 'w-6 h-1.5 bg-white'
-                  : 'w-1.5 h-1.5 bg-white/40'
-              }`}
+                ? 'w-6 h-1.5 bg-white'
+                : 'w-1.5 h-1.5 bg-white/40'
+                }`}
             />
           ))}
         </div>

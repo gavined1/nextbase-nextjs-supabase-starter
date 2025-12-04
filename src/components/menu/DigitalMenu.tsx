@@ -1,15 +1,23 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import { useSearchParams } from 'next/navigation';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { HeroCarousel } from './HeroCarousel';
-import { ItemDetailModal } from './ItemDetailModal';
 import { MenuLocaleProvider, useMenuLocale } from './locale';
 import { MenuGrid } from './MenuGrid';
 import { MenuNavbar } from './MenuNavbar';
-import { RestaurantInfoDrawer } from './RestaurantInfoDrawer';
 import { SearchAndFilter } from './SearchAndFilter';
 import type { MenuData, MenuItemWithCategory } from './types';
+
+// Lazy-load modals/drawers since they're not initially visible - improves initial bundle size
+const ItemDetailModal = dynamic(() => import('./ItemDetailModal').then(mod => ({ default: mod.ItemDetailModal })), {
+  ssr: false,
+});
+
+const RestaurantInfoDrawer = dynamic(() => import('./RestaurantInfoDrawer').then(mod => ({ default: mod.RestaurantInfoDrawer })), {
+  ssr: false,
+});
 
 interface DigitalMenuProps {
   data: MenuData;
