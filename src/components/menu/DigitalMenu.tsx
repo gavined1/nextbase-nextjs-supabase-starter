@@ -120,7 +120,7 @@ function DigitalMenuContent({
 
     // Small delay to show skeleton cards for smooth UX (simulates loading)
     setTimeout(() => {
-      setVisibleItemsCount((prev) => Math.min(prev + 8, filteredItems.length));
+      setVisibleItemsCount((prev) => Math.min(prev + 4, filteredItems.length));
       setIsLoadingMore(false);
     }, 400); // 400ms delay for smooth skeleton animation
   }, [filteredItems.length, isLoadingMore]);

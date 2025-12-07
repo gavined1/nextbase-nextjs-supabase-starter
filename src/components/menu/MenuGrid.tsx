@@ -146,7 +146,7 @@ export function MenuGrid({
         {/* Skeleton Loading Cards */}
         {isLoadingMore && (
           <>
-            {Array.from({ length: 8 }).map((_, index) => (
+            {Array.from({ length: 4 }).map((_, index) => (
               <MenuItemCardSkeleton key={`skeleton-${index}`} />
             ))}
           </>

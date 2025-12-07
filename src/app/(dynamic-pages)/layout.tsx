@@ -1,5 +1,5 @@
 import { ClientLayout } from '@/app/ClientLayout';
-import Footer from '@/components/Footer';
+import { ConditionalFooter } from '@/components/ConditionalFooter';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -19,7 +19,7 @@ export default async function RootLayout({
   return (
     <div className="flex flex-col min-h-screen bg-stone-50">
       <ClientLayout>{children}</ClientLayout>
-      <Footer />
+      <ConditionalFooter />
     </div>
   );
 }

@@ -1,5 +1,5 @@
 'use client';
-import { ArrowLeftIcon, Fingerprint, MailIcon } from 'lucide-react';
+import { ArrowLeftIcon, MailIcon } from 'lucide-react';
 
 import type React from 'react';
 
@@ -16,7 +16,6 @@ import {
 interface IConfirmationPendingCardProps {
   message: string;
   heading: string;
-  type: 'login' | 'sign-up' | 'reset-password';
   resetSuccessMessage: React.Dispatch<React.SetStateAction<string | null>>;
   resendEmail?: () => void;
 }
@@ -24,7 +23,6 @@ interface IConfirmationPendingCardProps {
 export function EmailConfirmationPendingCard({
   message,
   heading,
-  type,
   resetSuccessMessage,
   resendEmail,
 }: IConfirmationPendingCardProps) {
@@ -33,11 +31,7 @@ export function EmailConfirmationPendingCard({
     <div>
       <Card className="w-full md:min-w-[440px] mx-auto mt-10 items-center">
         <CardHeader>
-          {type === 'reset-password' ? (
-            <Fingerprint className="size-10 mx-auto mb-4" />
-          ) : (
-            <MailIcon className="size-10 mx-auto mb-4" />
-          )}
+          <MailIcon className="size-10 mx-auto mb-4" />
           <CardTitle className="text-center">{heading}</CardTitle>
           <CardDescription className="text-center">{message}</CardDescription>
         </CardHeader>
@@ -46,23 +40,17 @@ export function EmailConfirmationPendingCard({
             variant="secondary"
             onClick={() => {
               resetSuccessMessage(null);
-              router.push(
-                type === 'login'
-                  ? '/login'
-                  : type === 'sign-up'
-                  ? '/sign-up'
-                  : '/login'
-              );
+              router.push('/login');
             }}
           >
             <ArrowLeftIcon className="w-4 h-4 mr-2" />
-            {type === 'sign-up' ? 'Back to sign up' : 'Back to login'}
+            Back to login
           </Button>
         </CardFooter>
       </Card>
-      {type === 'sign-up' && resendEmail && (
+      {resendEmail && (
         <p className="text-center mt-4">
-          Didnt receive the email?{' '}
+          Didn't receive the email?{' '}
           <Button
             className="font-bold px-0"
             variant="link"

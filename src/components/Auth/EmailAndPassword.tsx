@@ -7,17 +7,14 @@ import {
 import { Label } from '@/components/ui/label';
 import { Spinner } from '@/components/ui/spinner';
 import { Lock, Mail } from 'lucide-react';
-import Link from 'next/link';
-import { useState } from 'react';
 import type { ComponentProps } from 'react';
+import { useState } from 'react';
 
 export const EmailAndPassword = ({
   onSubmit,
-  view,
   isLoading,
 }: {
   onSubmit: (data: { email: string; password: string }) => void;
-  view: 'sign-in' | 'sign-up';
   isLoading: boolean;
 } & ComponentProps<typeof Button>) => {
   const [email, setEmail] = useState<string>('');
@@ -45,7 +42,7 @@ export const EmailAndPassword = ({
                 <Mail className="h-4 w-4" />
               </InputGroupAddon>
               <InputGroupInput
-                id={`${view}-email`}
+                id="sign-in-email"
                 name="email"
                 type="email"
                 disabled={isLoading}
@@ -69,34 +66,20 @@ export const EmailAndPassword = ({
                 <Lock className="h-4 w-4" />
               </InputGroupAddon>
               <InputGroupInput
-                id={`${view}-password`}
+                id="sign-in-password"
                 name="password"
                 type="password"
                 disabled={isLoading}
                 value={password}
                 placeholder="Type your password"
                 onChange={(event) => setPassword(event.target.value)}
-                autoComplete={
-                  view === 'sign-in' ? 'current-password' : 'new-password'
-                }
+                autoComplete="current-password"
                 required
               />
             </InputGroup>
           </div>
         </div>
 
-        <div className="flex items-center justify-between">
-          {view === 'sign-in' ? (
-            <div className="text-sm">
-              <Link
-                href="/forgot-password"
-                className="font-medium text-muted-foreground dark:hover:text-gray-600 hover:text-foreground"
-              >
-                Forgot your password?
-              </Link>
-            </div>
-          ) : null}
-        </div>
         <div className="space-y-2">
           <Button disabled={isLoading} type="submit" className="w-full">
             {isLoading ? (
@@ -105,30 +88,9 @@ export const EmailAndPassword = ({
                 <span>Loading...</span>
               </>
             ) : (
-              <span>{view === 'sign-in' ? 'Login' : 'Sign up'}</span>
+              <span>Login</span>
             )}
           </Button>
-          <div className="w-full text-center">
-            {view === 'sign-in' ? (
-              <div className="text-sm">
-                <Link
-                  href="/sign-up"
-                  className="font-medium text-muted-foreground hover:text-foreground"
-                >
-                  Don't have an account? Sign up
-                </Link>
-              </div>
-            ) : (
-              <div className="text-sm">
-                <Link
-                  href="/login"
-                  className="font-medium text-muted-foreground hover:text-foreground"
-                >
-                  Already have an account? Log in
-                </Link>
-              </div>
-            )}
-          </div>
         </div>
       </div>
     </form>
